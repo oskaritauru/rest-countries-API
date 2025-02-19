@@ -1,13 +1,17 @@
 import { useParams } from "react-router-dom";
 import CountryDetail from "./CountryDetail";
 
-const CountryPage = ({ countries }) => {
-  const { fifa } = useParams();
-  const country = countries.find((item) => item.fifa === fifa);
+function CountryPage({ countries }) {
+  const { cca3 } = useParams();
+  const country = countries.find((c) => c.cca3 === cca3);
 
-  if (!country) {
-    return <p>Country not found.</p>;
-  }
+  if (!country) return <div>Country not found</div>;
+
+  // const borderCountries = country.borders
+  //   ? country.borders.map((borderCode) => {
+  //       return countries.find((c) => c.cca3 === borderCode);
+  //     })
+  //   : [];
 
   return (
     <div>
@@ -25,6 +29,6 @@ const CountryPage = ({ countries }) => {
       />
     </div>
   );
-};
+}
 
 export default CountryPage;

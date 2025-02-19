@@ -33,7 +33,7 @@ const HomePage = ({ countries }) => {
 
       <div className="AllCountries">
         {countries.map((country, index) => (
-          <Link key={country} to={`/country/${country.fifa}`}>
+          <Link key={country} to={`/country/${country.cca3}`}>
             <CountryCard
               key={index}
               imgSrc={country.flags.png}

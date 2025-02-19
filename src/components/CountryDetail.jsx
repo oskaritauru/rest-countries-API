@@ -1,4 +1,5 @@
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
+import "../components/CSS/CountryDetail.css";
 
 function CountryDetail(props) {
   const {
@@ -14,11 +15,11 @@ function CountryDetail(props) {
   } = props;
 
   return (
-    <div>
-      <div>
+    <div className="CountryWrapper">
+      <div className="CountryImg">
         <img src={imgSrc} alt="" />
       </div>
-      <div>
+      <div className="CountryInfo">
         <h2>{countryName}</h2>
         <p>
           Native Name: <span>{nativeName}</span>

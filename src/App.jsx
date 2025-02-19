@@ -43,7 +43,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage countries={countries} />} />
         <Route
-          path="/country/:fifa"
+          path="/country/:cca3"
           element={<CountryPage countries={countries} />}
         />
       </Routes>
