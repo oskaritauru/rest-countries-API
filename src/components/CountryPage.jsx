@@ -14,20 +14,18 @@ function CountryPage({ countries }) {
   //   : [];
 
   return (
-    <div>
-      <CountryDetail
-        imgSrc={country.flags.png}
-        countryName={country.name.common}
-        nativeName={country.nativeName}
-        population={country.population}
-        region={country.region}
-        capital={country.capital}
-        subRegion={country.subregion}
-        currencies={country.currencies[0]?.name}
-        languages={country.languages[0]?.name}
-        borderCountries={country.borders}
-      />
-    </div>
+    <CountryDetail
+      imgSrc={country.flags.png}
+      countryName={country.name.common}
+      nativeName={country.nativeName}
+      population={country.population}
+      region={country.region}
+      capital={country.capital}
+      subRegion={country.subregion}
+      currencies={country.currencies[0]?.name}
+      languages={country.languages[0]?.name}
+      borderCountries={country.borders}
+    />
   );
 }
 

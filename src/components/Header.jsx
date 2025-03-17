@@ -6,9 +6,9 @@ const Header = ({ themeSwitch }) => {
   return (
     <header className="Header">
       <h1>Where in the world?</h1>
-      <div className="ThemeSwitcher">
+      <div className="theme-switcher">
         <button onClick={themeSwitch}>
-          <IoMoonOutline />
+          <IoMoonOutline className="theme-icon" />
           Dark Mode
         </button>
       </div>
