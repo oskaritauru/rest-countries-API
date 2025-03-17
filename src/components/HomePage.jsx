@@ -13,7 +13,7 @@ const HomePage = ({ countries }) => {
       .toLowerCase()
       .includes(search.toLowerCase());
     const matchesRegion = selectedRegion
-      ? country.region === selectedRegion
+      ? country.region.toLowerCase() === selectedRegion
       : true;
     return matchesSearch && matchesRegion;
   });
@@ -49,8 +49,9 @@ const HomePage = ({ countries }) => {
             <option value="" disabled>
               Filter by Region
             </option>
+            <option value="">All</option> {/* Kaikki maat testimielessä*/}
             <option value="africa">Africa</option>
-            <option value="america">America</option>
+            <option value="americas">Americas</option>
             <option value="asia">Asia</option>
             <option value="europe">Europe</option>
             <option value="oceania">Oceania</option>
@@ -60,7 +61,7 @@ const HomePage = ({ countries }) => {
 
       <div className="AllCountries">
         {filteredCountries.map((country, index) => (
-          <Link key={country} to={`/country/${country.cca3}`}>
+          <Link key={country.cca3} to={`/country/${country.cca3}`}>
             <CountryCard
               key={index}
               imgSrc={country.flags.png}

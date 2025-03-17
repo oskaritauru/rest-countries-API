@@ -7,24 +7,48 @@ function CountryPage({ countries }) {
 
   if (!country) return <div>Country not found</div>;
 
-  // const borderCountries = country.borders
-  //   ? country.borders.map((borderCode) => {
-  //       return countries.find((c) => c.cca3 === borderCode);
-  //     })
-  //   : [];
+  const borderCountries = country.borders
+    ? country.borders
+        .map((borderCode) => {
+          return countries.find((c) => c.cca3 === borderCode);
+        })
+        .filter(Boolean)
+    : [];
+
+  const languages = Object.values(country.languages).join(", ");
+  const currencies = Object.values(country.currencies)
+    .map((currency) => currency.name)
+    .join(", ");
+
+  const topLevelDomain = Array.isArray(country.tld)
+    ? country.tld.join(", ")
+    : "No top-level domain available.";
+
+  const nativeName = country.name.nativeName
+    ? country.name.nativeName[Object.keys(country.name.nativeName)[0]].common
+    : "No native name available.";
+
+  // const nativeName =
+  //   country.name.nativeName.nld?.common || "No native name available.";
+
+  // const nativeName =
+  //   country.altSpellings.length > 0
+  //     ? country.altSpellings[1]
+  //     : "No native name available.";
 
   return (
     <CountryDetail
       imgSrc={country.flags.png}
       countryName={country.name.common}
-      nativeName={country.nativeName}
+      nativeName={nativeName}
       population={country.population}
       region={country.region}
       capital={country.capital}
       subRegion={country.subregion}
-      currencies={country.currencies[0]?.name}
-      languages={country.languages[0]?.name}
-      borderCountries={country.borders}
+      topLevelDomain={topLevelDomain}
+      currencies={currencies}
+      languages={languages}
+      borderCountries={borderCountries}
     />
   );
 }
