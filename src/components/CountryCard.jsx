@@ -1,20 +1,21 @@
 import "../components/CSS/CountryCard.css";
 
-const CountryCard = (props) => {
-  const { imgSrc, countryName, population, region, capital } = props;
+const CountryCard = ({ imgSrc, countryName, population, region, capital }) => {
+  const formattedPopulation = new Intl.NumberFormat("en-US").format(population);
+
   return (
-    <div className="Card">
-      <div className="ImgCard">
-        <img className="CountryImg" src={imgSrc} alt="" />
+    <div className="card">
+      <div className="img-card">
+        <img className="country-img" src={imgSrc} alt="" />
       </div>
-      <h2 className="CountryName">{countryName}</h2>
-      <p className="Population">
-        Population: <span>{population}</span>
+      <h2 className="country-name">{countryName}</h2>
+      <p className="population">
+        Population: <span>{formattedPopulation}</span>
       </p>
-      <p className="Region">
+      <p className="region">
         Region: <span>{region}</span>
       </p>
-      <p className="Capital">
+      <p className="capital">
         Capital: <span>{capital}</span>
       </p>
     </div>

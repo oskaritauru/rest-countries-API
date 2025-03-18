@@ -27,9 +27,9 @@ const HomePage = ({ countries }) => {
   };
 
   return (
-    <main className="HomePage">
+    <main className="home-page">
       <form>
-        <div className="SearchOptions">
+        <div className="search-options">
           <IoMdSearch size={23} style={{ fill: "hsl(0, 0%, 52%)" }} />
           <input
             placeholder="Search for a country..."
@@ -39,7 +39,7 @@ const HomePage = ({ countries }) => {
             onChange={handleSearchChange}
           />
         </div>
-        <div className="SelectOptions">
+        <div className="select-options">
           <select
             id="regions"
             name="regions"
@@ -49,7 +49,6 @@ const HomePage = ({ countries }) => {
             <option value="" disabled>
               Filter by Region
             </option>
-            <option value="">All</option> {/* Kaikki maat testimielessä*/}
             <option value="africa">Africa</option>
             <option value="americas">Americas</option>
             <option value="asia">Asia</option>
@@ -59,7 +58,7 @@ const HomePage = ({ countries }) => {
         </div>
       </form>
 
-      <div className="AllCountries">
+      <div className="all-countries">
         {filteredCountries.map((country, index) => (
           <Link key={country.cca3} to={`/country/${country.cca3}`}>
             <CountryCard

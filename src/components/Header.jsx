@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Header = ({ themeSwitch }) => {
   return (
-    <header className="Header">
+    <header className="header">
       <Link to="/">
         <h1>Where in the world?</h1>
       </Link>
