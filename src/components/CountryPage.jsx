@@ -28,6 +28,10 @@ function CountryPage({ countries }) {
     ? country.name.nativeName[Object.keys(country.name.nativeName)[0]].common
     : "No native name available.";
 
+  const formattedPopulation = new Intl.NumberFormat("en-US").format(
+    country.population
+  );
+
   // const nativeName =
   //   country.name.nativeName.nld?.common || "No native name available.";
 
@@ -41,7 +45,7 @@ function CountryPage({ countries }) {
       imgSrc={country.flags.png}
       countryName={country.name.common}
       nativeName={nativeName}
-      population={country.population}
+      population={formattedPopulation}
       region={country.region}
       capital={country.capital}
       subRegion={country.subregion}

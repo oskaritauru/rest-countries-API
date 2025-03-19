@@ -1,6 +1,6 @@
 import "../components/CSS/CountryDetail.css";
 import { Link } from "react-router-dom";
-import { FaArrowLeftLong } from "react-icons/fa6";
+import { IoIosArrowRoundBack } from "react-icons/io";
 
 function CountryDetail({
   imgSrc,
@@ -17,12 +17,12 @@ function CountryDetail({
 }) {
   return (
     <>
-      <Link to={`/`}>
-        <div className="return-button">
-          <FaArrowLeftLong size={20} class="fa-arrow" />
+      <div className="return-button">
+        <Link to={`/`}>
+          <IoIosArrowRoundBack size={30} className="fa-arrow" />
           <span>Back</span>
-        </div>
-      </Link>
+        </Link>
+      </div>
       <div className="country-wrapper">
         <div className="country-img">
           <img src={imgSrc} alt={`${countryName} flag`} />

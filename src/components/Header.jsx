@@ -1,18 +1,39 @@
 import "../components/CSS/Header.css";
 import { IoMoonOutline } from "react-icons/io5";
-import { Link } from "react-router-dom";
-// import { IoMoon } from "react-icons/io5";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { IoMoon } from "react-icons/io5";
 
 const Header = ({ themeSwitch }) => {
+  const navigate = useNavigate();
+  const handleRefresh = () => {
+    if (window.location.pathname === "/") {
+      window.location.reload();
+    } else {
+      navigate("/");
+    }
+  };
+
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const handleThemeSwitch = () => {
+    setIsDarkMode(!isDarkMode);
+    themeSwitch();
+  };
+
   return (
     <header className="header">
-      <Link to="/">
-        <h1>Where in the world?</h1>
-      </Link>
+      <h1 onClick={handleRefresh} style={{ cursor: "pointer" }}>
+        Where in the world?
+      </h1>
       <div className="theme-switcher">
-        <button onClick={themeSwitch}>
-          <IoMoonOutline className="theme-icon" />
-          Dark Mode
+        <button onClick={handleThemeSwitch}>
+          {isDarkMode ? (
+            <IoMoon className="theme-icon" />
+          ) : (
+            <IoMoonOutline className="theme-icon" />
+          )}
+          {isDarkMode ? "Light Mode" : "Dark Mode"}
         </button>
       </div>
     </header>

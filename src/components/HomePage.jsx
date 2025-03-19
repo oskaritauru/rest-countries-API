@@ -1,12 +1,13 @@
 import { useState } from "react";
 import "../components/CSS/HomePage.css";
 import { IoMdSearch } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import CountryCard from "./CountryCard";
 
 const HomePage = ({ countries }) => {
   const [search, setSearch] = useState("");
   const [selectedRegion, setSelectedRegion] = useState("");
+  const navigate = useNavigate();
 
   const filteredCountries = countries.filter((country) => {
     const matchesSearch = country.name.common
@@ -26,6 +27,18 @@ const HomePage = ({ countries }) => {
     setSelectedRegion(event.target.value);
   };
 
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      const foundCountry = countries.find((country) =>
+        country.name.common.toLowerCase().includes(search.toLowerCase())
+      );
+      if (foundCountry) {
+        navigate(`/country/${foundCountry.cca3}`);
+      }
+      event.preventDefault();
+    }
+  };
+
   return (
     <main className="home-page">
       <form>
@@ -37,6 +50,7 @@ const HomePage = ({ countries }) => {
             name="countries"
             value={search}
             onChange={handleSearchChange}
+            onKeyDown={handleKeyDown}
           />
         </div>
         <div className="select-options">

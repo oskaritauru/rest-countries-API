@@ -21,6 +21,10 @@ function App() {
   };
 
   useEffect(() => {
+    fetchCountries(setCountries);
+  }, []);
+
+  useEffect(() => {
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
     } else {
@@ -31,10 +35,6 @@ function App() {
   const themeSwitch = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
-
-  useEffect(() => {
-    fetchCountries(setCountries);
-  }, []);
 
   return (
     <>
