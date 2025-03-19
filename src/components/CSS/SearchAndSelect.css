@@ -1,0 +1,106 @@
+form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-options {
+  background-color: #fff;
+  padding: 0px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 1px 4px -1px hsl(0, 0%, 75%);
+  border-radius: 5px;
+}
+
+input {
+  width: 400px;
+  height: 50px;
+  border: none;
+  padding-left: 20px;
+  background-color: #fff;
+}
+
+.search-icon {
+  fill: hsl(0, 0%, 52%);
+  transition: transform 0.2s;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-0.5px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(0.5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.search-icon.active {
+  animation: shake 0.5s infinite;
+  fill: hsl(0, 0%, 0%);
+}
+
+input::placeholder {
+  color: hsl(0, 0%, 60%);
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+  color: black;
+}
+
+*:focus {
+  outline: none;
+}
+
+.select-options {
+  position: relative;
+  padding: 0px 7px 0px 10px;
+  box-shadow: 0px 1px 4px -1px hsl(0, 0%, 75%);
+  border-radius: 5px;
+  margin-right: 6px;
+  width: 170px;
+  border: none;
+  cursor: pointer;
+  background-color: #fff;
+  color: black;
+  font-size: 14px;
+}
+
+.selected-region {
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 5px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.options {
+  position: absolute;
+  background: white;
+  border: 1px solid #ccc;
+  width: 100%;
+  z-index: 1;
+  top: 50px;
+}
+
+.option {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.option:hover {
+  background-color: #f0f0f0;
+}
