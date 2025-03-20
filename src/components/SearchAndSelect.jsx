@@ -75,7 +75,7 @@ const SearchAndSelect = ({ countries, onSearchChange, onRegionChange }) => {
               onClick={() => handleRegionChange("americas")}
               className="option"
             >
-              Americas
+              America
             </div>
             <div onClick={() => handleRegionChange("asia")} className="option">
               Asia

@@ -5,9 +5,8 @@
 
 .all-countries {
   display: inline-grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  column-gap: 65px;
-  row-gap: 65px;
-  justify-items: center;
+  grid-template-columns: repeat(4, 263.5px);
+  column-gap: 70px;
+  row-gap: 70px;
   margin-top: 50px;
 }
