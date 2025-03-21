@@ -6,34 +6,33 @@ import CountryPage from "./components/CountryPage";
 
 function App() {
   const [countries, setCountries] = useState([]);
-  const [countriesData, setCountriesData] = useState([]);
   const [theme, setTheme] = useState("light");
+  const [error, setError] = useState(null);
 
-  const fetchCountries = async (setCountries) => {
+  const fetchCountries = async () => {
     try {
       const response = await fetch("https://restcountries.com/v3.1/all");
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
       const data = await response.json();
-      setCountriesData(data);
       setCountries(data);
     } catch (error) {
       console.error("Countries not found", error);
+      setError("Failed to load countries");
     }
   };
 
   useEffect(() => {
-    fetchCountries(setCountries);
+    fetchCountries();
   }, []);
 
   useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
+    document.documentElement.classList.toggle("dark", theme === "dark");
   }, [theme]);
 
   const themeSwitch = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
+    setTheme((prevTheme) => (prevTheme === "dark" ? "light" : "dark"));
   };
 
   return (

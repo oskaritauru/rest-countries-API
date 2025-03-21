@@ -32,14 +32,6 @@ function CountryPage({ countries }) {
     country.population
   );
 
-  // const nativeName =
-  //   country.name.nativeName.nld?.common || "No native name available.";
-
-  // const nativeName =
-  //   country.altSpellings.length > 0
-  //     ? country.altSpellings[1]
-  //     : "No native name available.";
-
   return (
     <CountryDetail
       imgSrc={country.flags.png}

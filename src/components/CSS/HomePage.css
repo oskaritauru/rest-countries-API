@@ -10,3 +10,71 @@
   row-gap: 70px;
   margin-top: 50px;
 }
+
+@media (min-width: 1441px) {
+  .all-countries {
+    grid-template-columns: repeat(4, 267.5px);
+  }
+}
+
+@media (min-width: 1231px) and (max-width: 1439px) {
+  .all-countries {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 30px;
+  }
+}
+@media (min-width: 1160px) and (max-width: 1231px) {
+  .all-countries {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 100px;
+  }
+}
+@media (max-width: 1160px) {
+  .all-countries {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 70px;
+  }
+}
+
+@media (max-width: 1020px) {
+  .all-countries {
+    column-gap: 30px;
+  }
+}
+
+@media (max-width: 860px) {
+  .all-countries {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 150px;
+  }
+}
+
+@media (max-width: 800px) {
+  .all-countries {
+    column-gap: 90px;
+  }
+}
+
+@media (max-width: 750px) {
+  .all-countries {
+    column-gap: 50px;
+  }
+
+  .home-page {
+    padding: 0rem 3rem;
+  }
+}
+
+@media (min-width: 0px) and (max-width: 630px) {
+  .all-countries {
+    grid-template-columns: 1fr;
+  }
+  .home-page {
+    padding: 0rem 1rem;
+    justify-items: center;
+  }
+
+  .card {
+    width: 300px;
+  }
+}

@@ -5,7 +5,7 @@ form {
 
 .search-options {
   background-color: #fff;
-  padding: 0px 20px;
+  padding: 0px 10px 0px 25px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -106,4 +106,77 @@ input:focus {
 
 .option:hover {
   background-color: #f0f0f0;
+}
+
+.dark {
+  .search-options {
+    background-color: hsl(209, 23%, 22%);
+    box-shadow: none;
+  }
+
+  input {
+    background-color: hsl(209, 23%, 22%);
+  }
+
+  .search-icon {
+    fill: hsl(0, 0%, 100%);
+  }
+
+  input::placeholder {
+    color: hsl(0, 0%, 80%);
+  }
+
+  textarea:focus,
+  input:focus {
+    color: #fff;
+  }
+
+  .select-options {
+    box-shadow: none;
+    border: none;
+    background-color: hsl(209, 23%, 22%);
+    color: hsl(0, 0%, 80%);
+  }
+
+  .selected-region {
+    background-color: hsl(209, 23%, 22%);
+  }
+
+  .options {
+    background-color: hsl(209, 23%, 22%);
+    border: none;
+    box-shadow: none;
+  }
+
+  .option:hover {
+    background-color: hsl(209, 23%, 20%);
+  }
+}
+
+@media (max-width: 900px) {
+  form {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .search-options {
+    justify-content: left;
+  }
+}
+
+@media (min-width: 0px) and (max-width: 630px) {
+  form {
+    gap: 40px;
+  }
+
+  .search-options {
+    width: 85vw;
+  }
+
+  .search-icon {
+    height: 30px;
+    width: 30px;
+  }
 }
