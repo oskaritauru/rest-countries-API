@@ -210,7 +210,77 @@
   }
 }
 
-@media (min-width: 0px) and (max-width: 630px) {
+/* @media (max-width: 1439px) {
+  .country-wrapper {
+    grid-template-rows: 35px 290px 120px;
+  }
+  .country-info {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 50px 1fr;
+    column-gap: 0;
+    row-gap: 20px;
+  }
+
+  .right-info {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .border-countries {
+    grid-column: 2;
+    grid-row: 4;
+    grid-template-columns: 145px 380px;
+  }
+} */
+
+@media (max-width: 1438px) {
+  .country-wrapper {
+    grid-template-rows: 35px 290px 120px;
+    grid-template-columns: 40vw;
+    column-gap: 50px;
+  }
+  .country-info {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 50px 1fr;
+    column-gap: 0;
+    row-gap: 20px;
+  }
+
+  .right-info {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .border-countries {
+    grid-column: 2;
+    grid-row: 4;
+    grid-template-columns: 145px 1fr;
+  }
+}
+
+@media (max-width: 951px) {
+  .country-wrapper {
+    grid-template-columns: 40vw;
+    grid-template-rows: 35px 290px 120px;
+    margin: 0 5rem;
+    margin-top: 80px;
+    row-gap: 10px;
+  }
+
+  .country-info {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 50px 1fr;
+    column-gap: 0;
+    row-gap: 20px;
+  }
+
+  .border-countries {
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 1fr;
+  }
+}
+
+@media (max-width: 887px) {
   .country-wrapper {
     min-height: 1080px;
     display: grid;
@@ -218,5 +288,64 @@
     grid-template-rows: repeat(3, 1fr);
     margin: 0 5rem;
     margin-top: 80px;
+    row-gap: 50px;
+  }
+
+  .country-info {
+    grid-template-rows: 50px 1fr 1fr;
+  }
+
+  .country-img {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .country-info {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .border-countries {
+    grid-column: 1;
+    grid-row: 3;
+  }
+}
+
+@media (max-width: 560px) {
+  .country-wrapper {
+    margin: 0 2rem;
+    margin-top: 80px;
+  }
+
+  .return-button {
+    margin: 0 0 0 2rem;
+    margin-top: 80px;
+  }
+}
+
+@media (min-width: 0px) and (max-width: 443px) {
+  .country-img img {
+    height: auto;
+  }
+
+  .country-img {
+    margin-top: 10px;
+  }
+
+  .country-wrapper {
+    grid-template-rows: 200px 1fr 1fr;
+    margin-top: 60px;
+  }
+
+  .return-button {
+    margin-top: 40px;
+  }
+
+  .right-info {
+    margin-top: 15px;
+  }
+
+  .border-countries {
+    margin-top: -70px;
   }
 }
