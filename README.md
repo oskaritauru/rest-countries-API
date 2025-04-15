@@ -36,6 +36,7 @@ Users should be able to:
 ### What I learned
 
 -Using APIs: I learned how to work with RESTful APIs in a React application to fetch and manipulate data, including retrieving, processing, and displaying information in components.
+</br>
 -JavaScript and JSX Skills: I enhanced my JavaScript skills, particularly in using JSX syntax, which combines HTML and JavaScript, and in managing state and props in React.
 -Component-Based Architecture: I built reusable components, which is a core concept in React, allowing for better code organization and maintainability.
 -State Management: I gained experience in managing component state and understanding how to lift state up when necessary, as well as using hooks like useState and useEffect.
