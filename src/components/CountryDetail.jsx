@@ -1,7 +1,10 @@
 import "../components/CSS/CountryDetail.css";
+// Import Link for navigation between routes
 import { Link } from "react-router-dom";
+// Import icon for the back button
 import { IoIosArrowRoundBack } from "react-icons/io";
 
+// Define the CountryDetail component that receives various country properties as props
 function CountryDetail({
   imgSrc,
   countryName,
@@ -17,16 +20,20 @@ function CountryDetail({
 }) {
   return (
     <>
+      {/* Back button to return to the previous page */}
       <div className="return-button">
         <Link to={`/`}>
           <IoIosArrowRoundBack size={30} className="fa-arrow" />
           <span>Back</span>
         </Link>
       </div>
+      {/* Wrapper for country details */}
       <div className="country-wrapper">
+        {/* Display country flag */}
         <div className="country-img">
           <img src={imgSrc} alt={`${countryName} flag`} />
         </div>
+        {/* Display country information */}
         <div className="country-info">
           <h2>{countryName}</h2>
           <div className="left-info">
@@ -61,6 +68,7 @@ function CountryDetail({
             </p>
           </div>
         </div>
+        {/* Display bordering countries */}
         <div className="border-countries">
           <h3>Border Countries:</h3>
           {borderCountries.length > 0 ? (

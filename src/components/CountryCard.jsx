@@ -1,6 +1,8 @@
 import "../components/CSS/CountryCard.css";
 
+// Define the CountryCard component that receives various country properties as props
 const CountryCard = ({ imgSrc, countryName, population, region, capital }) => {
+  // Format the population number with commas for better readability
   const formattedPopulation = new Intl.NumberFormat("en-US").format(population);
 
   return (
